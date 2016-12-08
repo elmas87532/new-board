@@ -1,0 +1,33 @@
+{
+  "name": "gonsakon",
+  "version": "1.0.0",
+  "description": "express get and post router sample",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gonsakon",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-partials": "^0.3.0",
+    "firebase": "^3.6.3",
+    "gcloud": "^0.37.0",
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.10.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigcanbigbig/board-homework.git"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "bugs": {
+    "url": "https://github.com/bigcanbigbig/board-homework/issues"
+  },
+  "homepage": "https://github.com/bigcanbigbig/board-homework#readme"
+}

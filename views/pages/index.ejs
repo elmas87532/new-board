@@ -1,0 +1,39 @@
+<script>
+window.onbeforeunload=function (){
+alert("===onbeforeunload===");
+if(event.clientX>document.body.clientWidth && event.clientY < 0 || event.altKey){
+	//關閉視窗
+}else{
+	//刷新視窗
+     <% refresh(); %>
+}
+}
+</script>
+<h1><%= ogheadTitle %></h1> 
+<!-- <img src="images/banner141229.jpg" alt=""> -->
+<table>
+	<tr>
+		<th>name</th>
+		<th>content</th>
+		<th>operate</th>
+	</tr>
+	<% for(var i=0; i<listdata.length; i++) {%> 
+	<% if (listdata[i]!=null){ %>
+	<tr>
+		<td><%= listdata[i].name %></td>
+		<td><%= listdata[i].content %></td>
+		<td><a href="#">修改</a> <a href="/delete?id=<%= listdata[i].id %>">刪除</a></td>
+	</tr>
+	<% }} %>
+</table>
+<h1>Leave a message...</h1>
+<form action="/post" method='post' id="messageform">
+<input type="hidden" name="num" value=<%= listdata.length %> />
+姓名：<input type="text" name="name"/><br/>
+  <textarea rows="4" cols="50" name="content" form="messageform"></textarea></br>
+  <input type="submit" vlaue="送出">
+</form>
+
+
+
+
