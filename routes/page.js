@@ -83,12 +83,6 @@ exports.post = function(req, res) {
 };
 
 
-var gcloud = require('gcloud');
-var gcs = gcloud.storage({
-      projectId: 'jsmessenger-b39b5',
-      keyFilename: 'jsmessenger-af0ab814fbf0.json'
-    });
-var bucket = gcs.bucket('jsmessenger-b39b5.appspot.com');
 
 
 exports.delete = function(req, res){
@@ -96,7 +90,7 @@ exports.delete = function(req, res){
   console.log(id);
   //firebase.database().ref().child('/message/'+id).remove();
   deleteData(id);
-  //bucket.delete('message/'+id);
+
   res.render('pages/delete', {
             ogheadTitle: 'Board',
             listdata: message,
