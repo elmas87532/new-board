@@ -4,6 +4,7 @@
   "description": "express get and post router sample",
   "main": "app.js",
   "scripts": {
+    "start": "node board.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "gonsakon",
@@ -21,13 +22,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigcanbigbig/board-homework.git"
+    "url": "git+https://github.com/elmas87532/new-board.git"
   },
   "engines": {
     "node": "6.9.1"
   },
   "bugs": {
-    "url": "https://github.com/bigcanbigbig/board-homework/issues"
+    "url": "https://github.com/elmas87532/new-board/issues"
   },
-  "homepage": "https://github.com/bigcanbigbig/board-homework#readme"
+  "homepage": "https://github.com/elmas87532/new-board#readme"
 }
