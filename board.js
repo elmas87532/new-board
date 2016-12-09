@@ -26,7 +26,7 @@ app.set('port', (process.env.PORT || 3000));
 app.use( static( path.join( __dirname, 'public' )));
 
 //預設favicon.ico位置
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/icon.png'));
 
 //路徑設定，有get與post指令
 app.get('/', page.index);
