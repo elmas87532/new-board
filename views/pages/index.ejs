@@ -22,7 +22,7 @@ if(event.clientX>document.body.clientWidth && event.clientY < 0 || event.altKey)
 	<tr>
 		<td><%= listdata[i].name %></td>
 		<td><%= listdata[i].content %></td>
-		<td><a href="#">修改</a> <a href="/delete?id=<%= listdata[i].id %>">刪除</a></td>
+		<td><a href="/update?id=<%= i %>">修改</a> <a href="/delete?id=<%= i %>">刪除</a></td>
 	</tr>
 	<% }} %>
 </table>

@@ -6,10 +6,10 @@
 
 var firebase = require("firebase");
 var config = {
-   apiKey: "AIzaSyBnheo2ky0leJXatme-iWVrOoGeAA5kzGc",
-   authDomain: "jsmessenger-b39b5.firebaseapp.com",
-   databaseURL: "https://jsmessenger-b39b5.firebaseio.com",
-   storageBucket: "jsmessenger-b39b5.appspot.com"
+   apiKey: "AIzaSyA6XwbquEGRHx2czHHnLckfuPqW2zWc5r0",
+   authDomain: "cool-project-669f6.firebaseapp.com",
+   databaseURL: "https://cool-project-669f6.firebaseio.com/",
+   storageBucket: "cool-project-669f6.appspot.com"
  };
  firebase.initializeApp(config);
  var database = firebase.database();
@@ -82,7 +82,40 @@ exports.post = function(req, res) {
     writeMessageData(num,name,content);
 };
 
+exports.update = function(req, res){
+  var id = req.param('id');
+  console.log(id);
+  //firebase.database().ref().child('/message/'+id).remove();
 
+  res.render('pages/update', {
+            ogheadTitle: 'Board',
+            listdata: message,
+            refresh: refresh,
+            id: id
+        });
+};
+
+exports.updating= function(req, res){
+  console.log(req.body.content);
+  console.log(req.body.id);
+
+  var msgRef = database.ref('message/'+req.body.id);
+  msgRef.set({
+    name: req.body.name,
+    content: req.body.content
+  });
+  message= new Array();
+  firebase.database().ref('/message').once('value').then(function(snapshot) {
+    //console.log(snapshot.val());
+    message=snapshot.val();
+  });
+
+  res.render('pages/updating', {
+            ogheadTitle: 'Board',
+            listdata: message,
+            refresh: refresh
+        });
+}
 
 
 exports.delete = function(req, res){

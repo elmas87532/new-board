@@ -1,0 +1,21 @@
+<head>
+</head>
+<h1>嗨</h1>
+<form action="/updating" method="post">
+<table>
+	<tr>
+		<th>name</th>
+		<th>content</th>
+	</tr>
+	<% for(var i=0; i<listdata.length; i++) {%> 
+	<% if (i==id){ %>
+	<tr>
+		<input type="hidden" value=<%= listdata[i].name %> name="name">
+		<td><%= listdata[i].name %></td>
+		<td><input type="text" value="<%= listdata[i].content %>" name="content"></td>
+	</tr>
+	<% }} %>
+</table>
+<input type="hidden" value=<%= id %> name="id">
+<input type="submit" value="修改"><br/><br/>
+</form>
